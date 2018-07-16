@@ -1,3 +1,26 @@
-page-home {
+/*animation*/
+body{
+  background: linear-gradient(to left,#489DF0,#080079); 
+}
+ svg {
+  position: absolute;
+ top: 50%;
+    left: 50%;
+    right: 50%;
+  transform: translate(-50%, -50%);
+  
+}
 
+.path {
+  animation: draw 2.5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes draw {
+  0% {
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
 }

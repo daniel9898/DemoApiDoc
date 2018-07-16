@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ toogleHeader }} Usuario</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+        <ion-item>
+		    <ion-label stacked>Nombre</ion-label>
+			<ion-input type="text" [(ngModel)]="user.name"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label stacked>Apellido</ion-label>
+			<ion-input type="text" [(ngModel)]="user.lastName"></ion-input> 
+		</ion-item>
+	
+	    <ion-item>
+			<ion-label stacked>Correo Electronico</ion-label>
+			<ion-input type="email" [(ngModel)]="user.email"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label stacked>Clave</ion-label>
+			<ion-input type="password" [(ngModel)]="user.password"></ion-input>
+		</ion-item>
+
+		<hr>
+
+		<button ion-button icon-start block round outline color="secondary" (click)="save()"
+		 [disabled]="false">
+          <ion-icon name="paper-plane"></ion-icon>
+		 Enviar
+		</button>
+</ion-content>

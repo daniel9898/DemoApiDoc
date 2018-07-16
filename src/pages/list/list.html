@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>lista de usuarios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list *ngFor="let user of list">
+
+    <ion-item-sliding #item>
+
+	  <ion-item>
+	  	<ion-avatar item-start>
+	      <img src="https://banner2.kisspng.com/20180404/lgw/kisspng-bryan-cranston-walter-white-jr-breaking-bad-jesse-walter-white-5ac4d030576046.7957264515228477923579.jpg">
+	    </ion-avatar>
+	
+	    <h2>{{ user.name }} {{ user.lastName }}</h2>
+	    <h3>{{ user.email }}</h3>
+	  </ion-item> 
+
+	    <ion-item-options side="left">
+            <button ion-button icon-only large clear (click)="delete(user)">
+			    <ion-icon color="danger" name="md-trash"></ion-icon>
+			</button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+            <button ion-button icon-only large clear (click)="edit(user)">
+		        <ion-icon color="bright" name="ios-create"></ion-icon>
+		    </button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+
+	</ion-list>
+
+</ion-content>
