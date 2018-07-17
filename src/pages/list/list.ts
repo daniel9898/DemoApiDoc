@@ -13,6 +13,7 @@ export class ListPage {
 
   listSub : Subscription;
   public list : any;
+  user : any;
 
   constructor(public navCtrl: NavController, 
   	          public navParams: NavParams,
@@ -35,12 +36,17 @@ export class ListPage {
     )
   }
 
-  async delete(user:any){
-   
+  confirmDelete(user:any){
+    this.user = user;
+    this._utils.showAlert('Atención !','¿Esta seguro que desea borrar el usuario : '+user.email+'?',this.delete.bind(this));
+  }
+
+  async delete(){
+
     this._utils.showLoading();
     try{
-        user.isActive = false; 
-    	await this._user.delete('users',user).toPromise();
+      this.user.isActive = false; 
+    	await this._user.delete('users',this.user).toPromise();
    
     	this._utils.showToast('USUARIO ELIMINADO EXITOSAMENTE !');
     	this.getUsers();

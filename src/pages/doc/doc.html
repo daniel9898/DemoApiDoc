@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Servicios de ayuda</ion-title>
+    <ion-title>Servicio de ayuda</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -11,13 +11,23 @@
 <ion-content padding>
   
 	<button ion-button icon-start block round outline color="secondary" (click)="showDocumentation()">
-	    <ion-icon name="book"></ion-icon>
+	    <ion-icon name="logo-nodejs"></ion-icon>
 	    Documentación
 	</button><br>
+    
+<ion-list inset>
 
-	<button ion-button icon-start block round outline color="orange" (click)="showTutorials()">
-	    <ion-icon name="logo-nodejs"></ion-icon>
-	    Tutoriales
-	</button>
+   <button clear ion-button  block color="orange"><h2>Tutoriales</h2></button>
+ <!-- https://www.iorad.com/player/135470/Crear-un-usuario#trysteps-1  -->
+  <button clear ion-button block color="light" (click)="showTutorial(1)">
+	¿Cómo crear un usuario?
+  </button>
+    <button clear ion-button block color="light" (click)="showTutorial(2)">
+    ¿Cómo Modificar un usuario?
+  </button> 
+    <button clear ion-button block color="light" (click)="showTutorial(3)">
+    ¿Cómo Eliminar un usuario?
+  </button>  
+</ion-list>
   
 </ion-content>

@@ -11,17 +11,23 @@ export class UtilsProvider {
               private alertCtrl: AlertController,
               private loadingCtrl: LoadingController) {}
 
-  showAlert(title: string, msj: string, handler?: any) {
+  showAlert(title: string, msj: string, callback?: any) {
     let alert = this.alertCtrl.create({
       title: title,
       subTitle: msj,
-      buttons: [
-      {
-        text: 'Continuar',
-        role: 'cancel',
-        handler: (handler != null) ?  handler : () => console.log("click alert")
-      }
-    ]
+      buttons: 
+      [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => console.log("click alert")
+        },
+        {
+          text: 'Aceptar',
+          handler: callback != null ? callback : console.log('sin callback')      
+        }
+      ]
+
     });
     alert.present();
   }
